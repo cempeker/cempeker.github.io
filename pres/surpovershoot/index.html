@@ -1,0 +1,996 @@
+<!doctype html>
+<html>
+	
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title> SO Algorithm </title>
+
+<link rel="stylesheet" href="dist/reset.css">
+<link rel="stylesheet" href="dist/reveal.css">
+<link rel="stylesheet" href="dist/theme/night.css" id="theme">
+<link rel="stylesheet" href="dist/pres.css">
+
+<!-- Theme used for syntax highlighted code -->
+<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+</head>
+	
+
+<body>
+<div class="reveal">
+<div class="slides">
+	
+	<!-- Slide -->
+        <section data-auto-animate>
+		<h3 style='font-size:50px;text-align:left;margin-bottom:40px;'> Extracting the collective wisdom in probabilistic judgments </h3>
+		<p data-id='name' style='font-size:36px;text-align:left;margin-bottom:40px;'> Cem Peker </p>
+		<br>
+		<p style='font-size:24px;text-align:left;'> Tinbergen Institute, Erasmus University Rotterdam</p>
+		
+	</section>
+
+
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='name' style='font-size:36px;text-align:left;margin-bottom:80px;'> <u>Cem Peker</u> </p>
+		<p style='font-size:22px;text-align:left;'> PhD in Economics (expected 2022, Tinbergen Institute) </p>
+		<p style='font-size:22px;text-align:left;margin-bottom:60px;'> BSc in Industrial Engineering </p>
+		<p style='font-size:22px;text-align:left;' class='fragment' data-fragment-index="1"> <span style = 'color:lime'>Fields:</span> Decision Sciences, Experimental Economics, Behavioral Economics </p>
+		<p style='font-size:22px;text-align:left;' class='fragment' data-fragment-index="1"> <span style = 'color:lime'>Research: </span> </p>
+		<ul class='fragment' data-fragment-index="1">
+			<li style='font-size:22px;text-align:left;margin-left:-150px;'> Elicit preferences, beliefs and judgments </li>
+			<li style='font-size:22px;text-align:left;margin-left:-150px;margin-bottom:30px;'> Aggregate judgments for decision making and forecasting ("wisdom of crowds") </li>
+		</ul>
+		<p style='font-size:22px;text-align:left;' class='fragment' data-fragment-index="2"> 1 solo R&R, JMP, 3 joint projects. </p>
+	</section> -->
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='name' style='font-size:36px;text-align:left;margin-bottom:80px;'> <u>Cem Peker</u> </p>
+		<p data-id='phd' style='font-size:22px;text-align:left;'> PhD in Economics (expected 2022, Tinbergen Institute) </p>
+		<p data-id='bsc' style='font-size:22px;text-align:left;margin-bottom:50px;'> BSc in Industrial Engineering, Bogazici University, Turkey. </p>
+		<p data-id='phd' style='font-size:22px;text-align:left;margin-bottom:50px;' class='fragment' data-fragment-index="1"> Postdoctoral researcher at Polytechnic University of Milan, Italy (Sep 2022 - )</p>
+		<p style='font-size:22px;text-align:left;' class='fragment' data-fragment-index="2"> <span style = 'color:lime'>Fields:</span> Decision Sciences, Experimental Economics, Behavioral Economics </p>
+		<p style='font-size:22px;text-align:left;' class='fragment' data-fragment-index="2"> <span style = 'color:lime'>Research: </span> </p>
+		<ul class='fragment' data-fragment-index="2">
+			<li style='font-size:22px;text-align:left;margin-left:-170px;'> Elicit preferences, beliefs and judgments </li>
+			<li style='font-size:22px;text-align:left;margin-left:-170px;margin-bottom:20px;'> Aggregate judgments for decision making and forecasting ("wisdom of crowds") </li>
+		</ul>
+		<!--<p style='font-size:22px;text-align:left;margin-bottom:40px;' class='fragment' data-fragment-index="1"> <span style = 'color:lime'>References:</span> Aurélien Baillon, Peter Wakker, Tom Wilkening </p>-->
+	</section>  
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='name' style='font-size:36px;text-align:left;margin-bottom:80px;'> <u>Cem Peker</u> </p>
+		<p data-id='phd' style='font-size:22px;text-align:left;'> PhD in Economics (expected 2022, Tinbergen Institute) </p>
+		<p data-id='bsc' style='font-size:22px;text-align:left;margin-bottom:50px;'> BSc in Industrial Engineering, Bogazici University, Turkey. </p>
+		<p data-id='phd' style='font-size:22px;text-align:left;margin-bottom:50px;'> Postdoctoral researcher at Polytechnic University of Milan, Italy (Sep 2022 - )</p>
+		<p style='font-size:22px;text-align:left;'> <span style = 'color:lime'>Fields:</span> Decision Sciences, Experimental Economics, Behavioral Economics </p>
+		<p style='font-size:22px;text-align:left;'><span style = 'color:lime'>Research output: </span> 1 solo R&R, JMP, 2 joint projects. </p>
+		<p style='font-size:22px;text-align:left;'> <span style = 'color:lime'>Memberships: </span> Bayesian Crowd, INFORMS, Society for Judgment and Decision Making (SJDM), Forecast Aggregation Journal Club. </p>
+	</section>  
+	
+	<!-- Slide -->
+        <section data-auto-animate>
+		<h3 style='font-size:50px;text-align:left;margin-bottom:40px;'> Extracting the collective wisdom in probabilistic judgments </h3>
+		<p data-id='name' style='font-size:36px;text-align:left;margin-bottom:40px;'> Cem Peker </p>
+		<br>
+		<p style='font-size:24px;text-align:left;'> Tinbergen Institute, Erasmus University Rotterdam</p>
+		
+	</section>
+	
+		
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;'> Collective wisdom? </p>
+		<br>
+		<p class='fragment' data-fragment-index="1" style='font-size:26px;text-align:left;'> An event from Metaculus.com (a community forecasting platform) </p>
+		<img data-id='russia' class='fragment' data-fragment-index="1" src="images/russia.svg" alt="density" height=200 width=880>
+		<br>
+		<p data-id='collwisdom' style='font-size:26px;text-align:left;margin-top:50px;color:#111;'> Individuals disagree, how should we combine judgments? </p>
+	</section> 
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;'> Collective wisdom? </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> An event from Metaculus.com (a community forecasting platform) </p>
+		<img data-id='russia' src="images/russia3.svg" alt="density" height=200 width=880>
+		<br>
+		<p data-id='collwisdom' style='font-size:26px;text-align:left;margin-top:50px;color:#111;'> Individuals disagree, how should we combine judgments? </p>
+	</section> 
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;'> Collective wisdom? </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> An event from Metaculus.com (a community forecasting platform) </p>
+		<img data-id='russia' src="images/russia2.svg" alt="density" height=200 width=880>
+		<br>
+		<p data-id='collwisdom' style='font-size:26px;text-align:left;margin-top:50px;color:#111;'> Individuals disagree, how should we combine judgments? </p>
+	</section> 
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;'> Collective wisdom? </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> An event from Metaculus.com (a community forecasting platform) </p>
+		<img data-id='russia' src="images/russia1.svg" alt="density" height=200 width=880>
+		<br>
+		<p data-id='collwisdom' style='font-size:26px;text-align:left;margin-top:50px;color:#111;'> Individuals disagree, how should we combine judgments? </p>
+	</section> 
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;'> Collective wisdom? </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> An event from Metaculus.com (a community forecasting platform) </p>
+		<img data-id='russia' src="images/russia.svg" alt="density" height=200 width=880>
+		<br>
+		<p data-id='collwisdom' style='font-size:26px;text-align:left;margin-top:50px;'> Individuals disagree, how should we combine judgments? </p>
+	</section> 
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='collwisdom' style='font-size:26px;text-align:left;'> Individuals disagree, how should we combine judgments? </p>
+		<br>
+		<p class='fragment' style='font-size:26px;text-align:left;'> Simple averaging is hard to beat (Clemen, 1989; Soll, 2009) </p>
+		<img class='fragment' src="images/simpaverage.png" alt="density" height=100 width=1000>
+		<br><br>
+		<p data-id='problem' class='fragment' style='font-size:26px;text-align:left;'> <span style='color:orange;'><b>Problem:</b> </span> Shared information </p>
+	</section>
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='problem' style='font-size:26px;text-align:left;'> <span style='color:orange;'><b>Problem:</b> </span> Shared information </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> Example: Subprime mortgage crisis (2008-2010) </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> Mortgage-backed securities considered safe by most </p>
+		<br>
+		<p class='fragment' data-fragment-index="2" style='font-size:26px;text-align:left;'> Analysts collectively underestimated risks, miscalibrated average judgment </p>
+	</section>
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;'> A robust aggregation method? </p>
+		<br>
+		<p class="fragment" data-fragment-index="1" style='font-size:26px;text-align:left;'> This paper develops <span style = 'color:lime'> <b>the Surprising Overshoot (SO) algorithm. </b></span> </p>
+		<br>
+		<p class="fragment" data-id='metabelief' data-fragment-index="2" style='font-size:26px;text-align:left;'> Elicits and uses <b> meta-beliefs</b> </p>
+		<p class="fragment" data-fragment-index="2" style='font-size:22px;text-align:left;'> Prelec et al. (2017), Palley and Soll (2019), Palley and Satopaa (2020), Wilkening et al. (2021) </p>
+	</section>
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='metabelief' style='font-size:26px;text-align:left;'> <u> Meta-belief example: </u> </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> What is the probability of a ceasefire in Ukraine before 2023? <br> <b> (prediction) </b> </p>
+		<br>
+		<p style='font-size:26px;text-align:left;'> <span class="fragment" data-fragment-index="1" > What is the average probability estimated by the other experts? </span> <span class="fragment" data-fragment-index="1" > <br> <b> (meta-prediction) </b> </span> </p>
+		<br>
+		<p class="fragment" data-fragment-index="2"  style='font-size:26px;text-align:left;color:orange;'> <b>Relationship between predictions and meta-predictions </b> </p>
+	</section>
+
+
+	<!-- Slide -->
+	<section>
+		<p style='font-size:28px;text-align:left;'> Evidence from three experimental studies </p>
+		<br>
+		<p style='font-size:28px;text-align:left;margin-bottom:50px;'> The SO algorithm... </p>
+		<p class='fragment' data-fragment-index="1" style='font-size:28px;text-align:left;margin-left:100px;margin-bottom:50px;'>...consistently outperforms average prediction. </p>
+  		<p class='fragment' data-fragment-index="2" style='font-size:28px;text-align:left;margin-left:100px;'>...improves over existing aggregation algorithms. </p>
+		<p class="fragment" data-fragment-index="2" style='font-size:22px;text-align:left;margin-left:100px;'> Palley and Soll (2019), Palley and Satopaa (2020), Martinie et al. (2020) </p>
+		</ul>
+	</section>
+
+	<!-- Slide -->
+	<section>
+		<p> The Framework </p>
+	</section>
+
+	<!-- Slide
+	<section>
+		<p data-id='linagg' style='font-size:26px;text-align:left;'> "Linear aggregation problem" &nbsp;  &nbsp; <span style='font-size:20px;text-align:left;'> (Palley and Soll, 2019; Palley and Satopaa, 2020) </span> </p>
+		<br>
+		<p class = 'fragment'  data-fragment-index="1" style='font-size:26px;text-align:left;'> $\theta$: true probability </p>
+		<p class = 'fragment'  data-fragment-index="1" style='font-size:26px;text-align:left;'> Each expert $i$ observes </p>
+		<ul class = 'fragment'  data-fragment-index="1" style='font-size:26px;text-align:left;margin-left:0;padding-left:0px;'>
+  			<li style='font-size:26px;text-align:left;'> shared information $s \in [0,1]$ </li>
+  			<li style='font-size:26px;text-align:left;'> a private signal $t_i \in [0,1] \quad \quad E[t_i] = \theta$ </li>
+		</ul>
+		<br><br>
+		<p class = 'fragment'  data-fragment-index="2"  style='font-size:26px;text-align:left;margin-left:75px;'> prediction: &nbsp; $x_i = (1-\omega)s + \omega \, t_i$ </p>
+		<p class = 'fragment'  data-fragment-index="2"  style='font-size:26px;text-align:left;'> meta-prediction: &nbsp; $z_i = (1-\omega)s + \omega \, x_i$  &nbsp;  &nbsp; &nbsp; <span style='font-size:20px;color:orange;text-align:left;'> $\{ (1-\omega) s + \omega \, \{\text{avg. signal of others}\} \} $ </span></p>		
+	</section> -->
+
+	<!-- Slide -->
+	<section>
+		<!--<section data-auto-animate>
+			<p data-id='linagg' style='font-size:26px;text-align:left;'> "Linear aggregation problem" &nbsp;  &nbsp; <span style='font-size:20px;text-align:left;'> (Palley and Soll, 2019; Palley and Satopaa, 2020) </span> </p>
+			<br>
+			<p class = 'fragment'  data-fragment-index="1" style='font-size:24px;text-align:left;margin-left:75px;'> $\theta$: true probability, $N$ experts </p>
+			<br>
+			<p class = 'fragment'  data-fragment-index="2"  style='font-size:24px;text-align:left;margin-left:75px;'> prediction: &nbsp; $x_i = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{t_i}$ </p>
+			<svg class = 'fragment' data-fragment-index="2" height="100px" width="800px"> 
+				<line x1="280px" y1="0px" x2="260px" y2="20px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:30px;"/>
+				<line x1="400px" y1="0px" x2="420px" y2="20px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:30px;"/>
+				<text x="150" y="50" fill="white" style='font-size:20px;margin-top:0px;' text-anchor="left">shared signal </text>
+				<text x="350" y="50" fill="white" style='font-size:20px;margin-top:0px;' text-anchor="left">private signal (i.i.d., unbiased)</text>
+			</svg>
+			<p class = 'fragment' data_id='metapred' data-fragment-index="3"  style='font-size:24px;text-align:left;'> meta-prediction: &nbsp;</p> 
+			<p class = 'fragment' data_id='metapred' data-fragment-index="3" style='font-size:24px;text-align:center;'> $z_i = E\left[ \frac{1}{N-1} \sum\limits_{j \neq i} x_j \, \middle\vert \, s,t_i \right] = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{E\left[ \frac{1}{N-1} \sum\limits_{j \neq i} t_j \, \middle\vert \, s,t_i \right]}$  </p>
+		</section>-->
+		<section data-auto-animate>
+			<p data-id='linagg' style='font-size:26px;text-align:left;'> "Linear aggregation problem" &nbsp;  &nbsp; <span style='font-size:20px;text-align:left;'> (Palley and Soll, 2019; Palley and Satopaa, 2020) </span> </p>
+			<br>
+			<p class = 'fragment'  data-fragment-index="1" style='font-size:24px;text-align:left;margin-left:75px;'> Binary event, &nbsp; $\theta$: prob. of occurrence, <span class = 'fragment'  data-fragment-index="2"> &nbsp; &nbsp; &nbsp; $N$ experts, &nbsp; Common prior $E[\theta] = s$</span> </p>
+			<!--<p class = 'fragment'  data-fragment-index="1" style='font-size:24px;text-align:left;margin-left:75px;'> Binary event, &nbsp; $\theta$: probability of occurrence,</p>
+			<p class = 'fragment'  data-fragment-index="2" style='font-size:24px;text-align:left;margin-left:75px;'> $N$ experts, &nbsp; Common prior on $\theta$ with $E[\theta] = s$</span> -->
+			<p class = 'fragment'  data-fragment-index="3" style='font-size:24px;text-align:left;margin-left:75px;'> $t_i$: iid, unbiased signal &nbsp; $(\theta \, \pm \text{error})$ </p>
+			<br>
+			<p class = 'fragment'  data-fragment-index="4"  style='font-size:24px;text-align:left;margin-left:75px;'> prediction: &nbsp; $x_i = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{t_i}$ </p>
+			<svg class = 'fragment' data-fragment-index="4" height="100px" width="800px"> 
+				<line x1="270px" y1="0px" x2="250px" y2="20px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:30px;"/>
+				<line x1="390px" y1="0px" x2="410px" y2="20px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:30px;"/>
+				<text x="150" y="50" fill="white" style='font-size:20px;margin-top:0px;' text-anchor="left">shared information </text>
+				<text x="370" y="50" fill="white" style='font-size:20px;margin-top:0px;' text-anchor="left">private signal </text>
+			</svg>
+			<p class = 'fragment' data_id='metapred' data-fragment-index="5"  style='font-size:24px;text-align:left;'> meta-prediction: &nbsp; $z_i = E\left[ \frac{1}{N-1} \sum\limits_{j \neq i} x_j \, \middle\vert \, s,t_i \right] $</p> 
+		</section>
+		
+		<section data-auto-animate>
+			<p data-id='linagg' style='font-size:26px;text-align:left;margin-bottom:90px;'> <u>"Linear aggregation problem" </u> &nbsp;  &nbsp; <span style='font-size:20px;text-align:left;'> (Palley and Soll, 2019) </span> </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;'> $Y \in \{0,1\}$: outcome of the event, $\theta = P(Y=1)$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;margin-bottom:60px;'> Common prior on $\theta$: $Beta(m s, m(1-s))$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;margin-bottom:60px;'> $t_i$: average of $\ell$ independent realizations of $Y$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;margin-bottom:60px;'> Posterior belief: $Beta(ms + \ell t_i, m(1-s) + \ell(1-t_i))$ with $$E[\theta | s,t_i] = \frac{m}{m+\ell} s + \frac{\ell}{m+\ell} t_i$$  </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;'> Let $\omega = \ell/(m+\ell) \,$ and $\, E[\theta | s,t_i] = (1-\omega) \, s + \omega \, t_i$  </p>
+		</section>
+
+		<!--<section data-auto-animate>
+			<p data-id='linagg' style='font-size:26px;text-align:left;margin-bottom:50px;'> <u>"Linear aggregation problem" example </u> &nbsp;  &nbsp; <span style='font-size:20px;text-align:left;'> (Palley and Soll, 2019) </span> </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;'> $Y \in \{0,1\}$: outcome of the event, $\theta = P(Y=1)$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;margin-bottom:50px;'> Common prior on $\theta$: $Beta(m_0 \mu_0, m_0(1-\mu_0))$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;'> $s_1$: average of $m_1$ independent realizations of $Y$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;margin-bottom:50px;'> $t_i$: average of $\ell$ independent realizations of $Y$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;'> $s$: combination of $s_1$ and $\mu_0$ with $m = m_1 + m_2$ </p>
+			<p style='font-size:24px;text-align:left;margin-left:75px;'> Posterior belief: $Beta(ms + \ell t_i, m(1-s) + \ell(1-t_i))$ with $$E[\theta | s,t_i] = \frac{m}{m+\ell} s + \frac{\ell}{m+\ell} t_i$$  </p>
+		</section>-->
+	</section>
+	
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:24px;text-align:left;'> Simple averaging? </p>
+		<p style='font-size:24px;text-align:left;margin-left:300px;'> $ \displaystyle \bar{x} = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{\frac{1}{N} \sum_{i=1}^N t_i} $
+		</p>
+		<svg height="100px" width="800px"> 
+				<line x1="340px" y1="0px" x2="320px" y2="30px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:30px;"/>
+				<line x1="520px" y1="0px" x2="540px" y2="30px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:30px;"/>
+				<text x="220" y="50" fill="white" style='font-size:20px;margin-top:0px;' text-anchor="left">shared information </text>
+				<text x="500" y="50" fill="white" style='font-size:20px;margin-top:0px;' text-anchor="left">avg. private signal</text>
+			</svg>
+		<p class = 'fragment' style='font-size:24px;text-align:left;'>Then,
+			\begin{align} 		
+				\lim_{N \to \infty} \bar{x} &= (1-\omega)  \,\, \color{orange}{s} + \omega \,\, \color{orange}{\theta} \neq \theta \quad \text{ for } \quad s \neq \theta
+			\end{align}
+		</p>
+		<br>
+		<p class = 'fragment' style='font-size:24px;text-align:center;'> Shared-information problem &nbsp;  &nbsp; <span style='font-size:20px;text-align:left;'> (Palley and Soll, 2019; Palley and Satopaa, 2020) </span> </p>
+	</section>
+
+
+	<!-- Slide -->
+	<section>
+		<p style='font-size:28px;text-align:left;margin-bottom:100px;'> Bias from aggregation </p>
+		<p style='font-size:28px;text-align:left;margin-bottom:100px;'> Solution: An alternative aggregation algorithm </p>
+		<p style='font-size:28px;text-align:left;color:lime'> <b>The Surprising Overshoot Estimator</b> </p>
+	</section>
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p style='font-size:24px;margin-bottom:40px;'> Suppose expert $i$'s meta-prediction overshoots average prediction </p>
+		<p style='font-size:24px;text-align:left;margin-left:420px;margin-bottom:50px;'>
+			$\displaystyle z_i > \bar{x} $
+		</p>
+		<p class = 'fragment' style='font-size:22px;text-align:left;margin-left:10px;margin-bottom:50px;'>
+			$\displaystyle \color{orange}{(1-\omega) s} + \omega \underbrace{E\left[ \frac{1}{N-1} \sum\limits_{j \neq i}  t_j \, \middle\vert \, s,t_i \right]}_\text{Expectation on avg signal of others} > \color{orange}{(1-\omega) s} + \omega \underbrace{\frac{1}{N} \sum_{i=1}^N t_i}_\text{avg signal}$
+		</p>
+		<p class = 'fragment' style='font-size:22px;text-align:left;margin-left:240px;margin-bottom:0px;'>
+			$\displaystyle \underbrace{E\left[ \theta | s,t_i \right]}_\text{expert $i$'s prediction ($x_i$)} > \underbrace{\frac{1}{N} \sum_{i=1}^N t_i}_\text{converges to $\theta$ for $N \to \infty$}$ 
+		</p>
+		<!--<p style='font-size:22px;text-align:left;margin-left:420px;'>
+			<span class = 'fragment' data-fragment-index="4"> $\displaystyle x_i > \frac{1}{N} \sum_{i=1}^N t_i$ </span>
+			<span class = 'fragment' data-fragment-index="5"> $ = \theta \quad \text{    for  } N \to \infty$ </span>
+		</p>-->
+		<!--<p class = 'fragment' style='font-size:22px;text-align:left;margin-left:50px;'>
+			<span style='color:lime'> $\displaystyle E\left[ \theta | s,t_i \right] = $ prediction $\displaystyle = x_i$ </span>
+			<span> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </span>
+			<span style='color:lime'> $\displaystyle \frac{1}{N} \sum_{i=1}^N t_i \to \theta \quad \text{for} \quad N \to \infty$ </span>
+		</p>-->
+	</section>
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="400" y="60" fill="white" style='font-size:30px;margin-top:50px;' text-anchor="left"> &#8660; </text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<div class="container" style='margin-top:20px;'>
+			<div class="col" style='font-size:22px;padding-right:0px;text-align:left;'>
+				<p class = 'fragment' data-fragment-index="1"  style='font-size:22px;margin-bottom:0px;text-align:left;margin-left:0px;'> $x_i = E\left[ \theta | s,t_i \right] = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{t_i}$ </p>
+				<p class = 'fragment' data-fragment-index="1"  style='font-size:22px;margin-bottom:0px;text-align:left;margin-left:0px;'> $z_i = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{E\left[ \theta | s,t_i \right]}$ </p>
+				<p class = 'fragment' data-fragment-index="1"  style='font-size:22px;margin-bottom:0px;text-align:left;margin-left:0px;'> $\displaystyle \lim_{N \to \infty} \bar{x} = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{\theta}$ </p>
+			</div>
+			<div class="col" style='font-size:22px;padding-left:0px;text-align:left;'>
+				<img class = 'fragment' data-fragment-index="2" src="images/test1.png" alt="coin" height="70" width="650">
+				<img class = 'fragment' data-fragment-index="3" src="images/test2.png" alt="coin" height="75" width="650">
+			</div>
+		</div>
+	</section> -->
+	
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="400" y="60" fill="white" style='font-size:30px;margin-top:50px;' text-anchor="left"> &#8660; </text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<div class="container" style='margin-top:20px;'>
+			<div class="col" style='font-size:22px;padding-right:30px;text-align:left;'>
+				<img class = 'fragment' data-fragment-index="1" src="images/test1.png" alt="coin" height="70" width="650">
+				<img class = 'fragment' data-fragment-index="2" src="images/test2.png" alt="coin" height="75" width="650">
+			</div>
+			<div class="col" style='font-size:22px;padding-left:30px;text-align:left;'>
+				<p class = 'fragment' data-fragment-index="1"  style='font-size:22px;margin-bottom:0px;margin-top:40px;text-align:left;margin-left:0px;'> $x_i = E\left[ \theta | s,t_i \right] = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{t_i}$ </p>
+				<p class = 'fragment' data-fragment-index="2"  style='font-size:22px;margin-bottom:0px;margin-top:80px;text-align:left;margin-left:0px;'> $z_i = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{E\left[ \theta | s,t_i \right]}$ </p>
+				<p class = 'fragment' data-fragment-index="2"  style='font-size:22px;margin-bottom:0px;text-align:left;margin-left:0px;'> $\displaystyle \lim_{N \to \infty} \bar{x} = (1-\omega) \,\, \color{orange}{s} \, + \, \omega \,\, \color{orange}{\theta}$ </p>	
+			</div>
+		</div>
+		
+	</section> -->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="400" y="60" fill="white" style='font-size:30px;margin-top:50px;' text-anchor="left"> &#8660; </text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<img class = 'fragment' data-fragment-index="1" src="images/test1.png" alt="coin" height="70" width="500" style='margin-top:40px;'>
+		<img class = 'fragment' data-fragment-index="2" src="images/test2.png" alt="coin" height="75" width="500">
+	</section> -->
+	
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="400" y="60" fill="white" style='font-size:30px;margin-top:50px;' text-anchor="left"> &#8660; </text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+
+
+		<div class="container" style='margin-top:15px;'>
+			<div class="col" style='font-size:22px;padding-right:10px;text-align:left;'>
+				<img class = 'fragment' data-fragment-index="1" src="images/test1.png" alt="coin" height="70" width="650" style='margin-top:50px;'>
+			</div>
+			<div class="col" style='font-size:22px;padding-left:10px;text-align:left;'>
+				<p class = 'fragment' data-fragment-index="1" style='font-size:22px;margin-bottom:20px;margin-top:30px;text-align:left;margin-left:0px;'> $x_i > \theta$ </p>
+				<p class = 'fragment' data-fragment-index="2" style='font-size:22px;margin-bottom:10px;margin-top:0px;text-align:left;margin-left:0px;'> Meta-pred: Depends on $E[\text{average signal}]$ </p>
+				<p class = 'fragment' data-fragment-index="2" style='font-size:22px;margin-bottom:50px;margin-top:0px;text-align:left;margin-left:0px;'> $\theta \equiv$ average signal </p>
+			</div>
+		</div>
+		<p style='font-size:22px;margin-bottom:0px;margin-top:0px;text-align:left;margin-left:0px;'> <span class = 'fragment' data-fragment-index="3">Overestimate in prediction ($x_i > \theta$) </span> <span class = 'fragment' data-fragment-index="4" style='color:orange;'>$\to$ Overestimate average signal </span> <span class = 'fragment' data-fragment-index="5" style='color:lime;'> $\to$ Overestimate in meta-prediction ($z_i > \bar{x}$) </span></p>
+	</section> -->
+	
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<!--<text x="400" y="60" fill="white" style='font-size:30px;margin-top:50px;' text-anchor="left"> &#8660; </text>-->
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;margin-bottom:10px;text-align:left;margin-left:70px;'> Overestimate $\bar{x}$ in meta-prediction $\iff$ Overestimate $\theta$ in prediction </p>
+		<p class = 'fragment' data-fragment-index="2" style='font-size:24px;color:lime;margin-bottom:60px;'> <b>Why?</b> </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;margin-bottom:10px;text-align:left;margin-left:70px;'> Both $x_i$ and $z_i$ depend on signal $t_i$ </p>
+		<p class = 'fragment' data-fragment-index="4" style='font-size:24px;margin-bottom:10px;text-align:left;margin-left:70px;'> Optimistic $t_i \implies$ Overestimate in $x_i$ and $z_i$ both </p>
+		
+		<!--<p style='font-size:22px;margin-bottom:0px;margin-top:0px;text-align:left;margin-left:0px;'> <span class = 'fragment' data-fragment-index="5">Overestimate in prediction ($x_i > \theta$) </span> <span class = 'fragment' data-fragment-index="6" style='color:orange;'>$\to$ Overestimate average signal </span> <span class = 'fragment' data-fragment-index="7" style='color:lime;'> $\to$ Overestimate in meta-prediction ($z_i > \bar{x}$) </span></p>-->
+	</section> 
+	
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		
+		<!--<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<p data-id='ov1' style='font-size:24px;margin-bottom:50px;'> % of $\{z_i \leq \bar{x}\}$ &nbsp; &nbsp; &nbsp; &nbsp; also measures &nbsp; &nbsp; &nbsp; &nbsp; % of $\{x_i \leq \theta\}$ </p>
+		<p data-id='ov2' class = 'fragment' data-fragment-index="1"  style='font-size:24px;margin-bottom:50px;color:orange;'>  Population quantile of predictions at &nbsp; &nbsp; % of $\{z_i \leq \bar{x}\}$ &nbsp; &nbsp; gives &nbsp; $\theta$  </p>
+		<p data-id='ov3' style='font-size:24px;'> <span class='fragment' data-fragment-index="2">For $N$ finite? &nbsp; </span> <span class='fragment' data-fragment-index="3" style="color:lime"><b>SO estimator</b> &nbsp; $=$ &nbsp; Sample quantile of predictions at &nbsp; % of $\{z_i \leq \bar{x}\}$ </span> </p>
+		</section> -->
+		
+		<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;margin-bottom:30px;text-align:left;margin-left:170px;'> Suppose 60% of all meta-predictions ($z_i$) overshoot $\bar{x}$ </p>
+		<p class = 'fragment' data-fragment-index="2" style='font-size:24px;margin-bottom:30px;text-align:left;margin-left:170px;'> Then, 60% of all predictions ($x_i$) overshoot $\theta$ </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;margin-bottom:60px;text-align:left;margin-left:170px;color:orange;'> Population quantile of predictions at 40% gives $\theta$ </p>
+		
+		<p data-id='ov3' style='font-size:24px;margin-left:0px;'> <span class='fragment' data-fragment-index="4">For $N$ finite? &nbsp; </span> <span class='fragment' data-fragment-index="5" style="color:lime"><b>SO estimator</b> $=$ Sample quantile </span> <span class='fragment' data-fragment-index="6"> $\overset{p}{\longrightarrow}$ Population quantile as $N$ increases </span> </p>
+		</section>
+		
+		<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<p style='font-size:24px;margin-bottom:40px;margin-top:30px;text-align:left'> What if $s = \theta$? &nbsp; &nbsp; No shared-information problem, $\bar{x} = \theta$ </p>
+		<p style='font-size:24px;margin-bottom:40px;text-align:left'> {Percentage of $z_i > \bar{x}$} $= $ {Percentage of $x_i > \bar{x}$}</p>
+		<p style='font-size:24px;margin-bottom:0px;text-align:left'> Not equal when $s \neq \theta \to$ <span style='color:orange;'>"Overshoot surprise"</span> $\to$ shared-information problem</p>
+		</section>
+
+		<!--
+		<section data-auto-animate>
+		<p data-id='iff1' style='font-size:26px;text-align:left;margin-bottom:30px;'> For $N \to \infty$... </p>
+		<p data-id='iff2' style='font-size:30px;margin-bottom:10px;text-align:center;'> $z_i > \bar{x} \iff x_i > \theta$ </p>
+		<svg data-id='iff3' height="100px" width="800px"> 
+			<line x1="240px" y1="0px" x2="190px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="340px" y1="0px" x2="320px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="480px" y1="0px" x2="500px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<line x1="560px" y1="0px" x2="600px" y2="40px" style="stroke:rgb(255,255,255);stroke-width:2;margin-bottom:50px;"/>
+			<text x="60" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">meta-prediction</text>
+			<text x="220" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="250" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">avg. prediction</text>
+			<text x="440" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">prediction</text>
+			<text x="550" y="60" fill="white" style='font-size:30px;margin-top:50px;text-align:bottom;' text-anchor="left"> &#62; </text>
+			<text x="580" y="60" fill="white" style='font-size:20px;margin-top:50px;' text-anchor="left">true value</text>
+		</svg>
+		<br>
+		<div class="container" style='margin-top:20px;'>
+			<div class="col" style='font-size:22px;padding-right:0px;text-align:left;'>
+				<p style='font-size:24px;margin-bottom:20px;text-align:left'> What if $s = \theta$? </p>
+				<p style='font-size:24px;margin-bottom:20px;'> % of $\{z_i > \bar{x}\} = $ % of $\{x_i > \bar{x}\}$</p>
+				<p class = 'fragment' style='font-size:24px;'> <span style='color:orange;'>"Overshoot surprise"</span> when $s \neq \theta$ </p>
+			</div>
+			<div class="col" style='font-size:22px;padding-left:0px;text-align:left;'>
+				<img src="images/test3.png" alt="coin" height="80" width="450">
+			</div>
+		</div>
+		<p class = 'fragment' style='font-size:24px;'> % of $\{z_i > \bar{x}\} - $ % of $\{x_i > \bar{x}\} > 0$ &nbsp; &nbsp; if &nbsp; &nbsp; $s > \theta$  &nbsp; &nbsp; (Positive overshoot surprise) </p>
+		
+		</section> -->
+
+	</section>
+
+	
+
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='ov3' style='font-size:24px;margin-bottom:100px;text-align:left;margin-left:0px;'> <span style="color:lime"><b>SO estimator</b> </p>
+		<p style='font-size:24px;text-align:left;margin-bottom:100px;margin-left:100px;'> Improvement in accuracy when... </p>
+		<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-left:100px;'> 1. $N$ is not very small. </p>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;'> 2. High disagreement among experts (difficult questions). </p>
+	
+	</section>
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='ov3' style='font-size:24px;margin-bottom:100px;text-align:left;margin-left:0px;'> <span style="color:lime"><b>SO estimator</b> </p>
+		<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+		<p data-id='coin' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:80px;'> Sample quantile $\overset{p}{\longrightarrow}$ Population quantile as $N$ increases </p>
+		<p data-id='coin2' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:80px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+		<p data-id='coin3' style='font-size:24px;text-align:left;margin-left:100px;'> Subjects guess Prob(Heads) of a biased two-sided coin. </p>
+	</section>
+
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-bottom:80px;margin-top:90px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+				<p data-id='coin2' style='font-size:24px;text-align:left;margin-bottom:60px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+				<p data-id='coin3' style='font-size:24px;text-align:left;margin-bottom:60px;'> Subjects guess Prob(Heads) of a biased two-sided coin. </p>
+				<p style='font-size:24px;text-align:left;margin-bottom:50px;'> 48 coins, 685 subjects </p>
+			</div>
+			<div class="col-graph">
+				<!--<img src="images/coin.png" alt="coin" height="680" width="640">-->
+				<img src="images/experiment.png" alt="coin" height="680" width="640">
+			</div>
+		</div>
+	</section>
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:70px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+		<p data-id='coin2' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:70px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+		<p style='font-size:24px;text-align:left;margin-bottom:50px;margin-left:100px;'> <span style='color:orange;'><b>Analysis:</b></span> </p> 
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;text-align:left;margin-bottom:10px;margin-left:130px;'> Get prediction and meta-prediction data </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;text-align:left;margin-bottom:50px;margin-left:130px;'> Set benchmark methods for comparison </p>  
+		<p class = 'fragment' data-fragment-index="2" style='font-size:24px;text-align:left;margin-bottom:10px;margin-left:130px;'> Generate Bootstrap samples of $N \in \{10,20,\ldots\}$</p> 
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;text-align:left;margin-bottom:50px;margin-left:130px;'> In each sample, calculate aggregate prediction per method </p> 
+		<p class = 'fragment' data-fragment-index="4" style='font-size:24px;text-align:left;margin-left:130px;'> Compare average errors for each $N$ </p>
+	</section> -->
+	
+	<section data-auto-animate>
+		<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:70px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+		<p style='font-size:24px;text-align:left;margin-bottom:50px;margin-left:100px;'> <span style='color:orange;'><b>Analysis:</b></span> Bootstrap approach </p> 
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;text-align:left;margin-bottom:10px;margin-left:130px;'> Collect prediction and meta-prediction data </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;text-align:left;margin-bottom:50px;margin-left:130px;'> Set benchmark methods for comparison </p>  
+		<p class = 'fragment' data-fragment-index="2" style='font-size:24px;text-align:left;margin-bottom:10px;margin-left:130px;'> Generate samples of $N \in \{10,20,\ldots,100\}$ with replacement</p> 
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;text-align:left;margin-bottom:50px;margin-left:130px;'> Implement aggregation methods in each sample </p> 
+		<p class = 'fragment' data-fragment-index="4" style='font-size:24px;text-align:left;margin-left:130px;'> Compare average errors for each $N$ </p>
+	</section> 
+		
+	<!-- Slide 
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='sampl_size' style='font-size:22px;text-align:left;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+				<p data-id='coin2' style='font-size:22px;text-align:left;margin-bottom:70px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/coin1.svg" alt="density" height=400 width=640 style="margin-top:80px;">
+				<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>
+			</div>
+		</div>
+	</section> -->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='sampl_size' style='font-size:22px;text-align:left;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+				<p data-id='coin2' style='font-size:22px;text-align:left;margin-bottom:80px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/coin2.svg" alt="density" height=400 width=640 style="margin-top:80px;">
+				<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>
+			</div>
+		</div>
+	</section> -->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='sampl_size' style='font-size:22px;text-align:left;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+				<p data-id='coin2' style='font-size:22px;text-align:left;margin-bottom:80px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/coin3.svg" alt="density" height=400 width=640 style="margin-top:80px;">
+				<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>
+			</div>
+		</div>
+	</section> -->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='sampl_size' style='font-size:22px;text-align:left;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+				<p data-id='coin2' style='font-size:22px;text-align:left;margin-bottom:80px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/coin4.svg" alt="density" height=400 width=640 style="margin-top:80px;">
+				<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>
+			</div>
+		</div>
+	</section> -->
+	
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+				<p data-id='coin2' style='font-size:24px;text-align:left;margin-bottom:80px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+				<p style='font-size:24px;text-align:left;color:#111'> Higher relative accuracy for in moderate to large samples. </p>
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/coin1.svg" alt="density" height=400 width=640 style="margin-top:80px;">
+				<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>
+			</div>
+		</div>
+	</section>
+	
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+	
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 1. $N$ is not very small. </span> </p>
+				<p data-id='coin2' style='font-size:24px;text-align:left;margin-bottom:80px;'> Evidence using Study 1 from Palley and Soll (2019). </p>
+				<p style='font-size:24px;text-align:left;color:red;'> <b>SO estimator has the lowest error in moderate to large samples.</b> </p>
+				<!--<p style='font-size:24px;text-align:left;'> Differences with <span style="color:#3E71A8;">Simple Average</span>, <span style="color:#CEFF1A;">Median</span> and <span style="color:#29BF12;">Meta-Probability Weighting</span> are significant </p>-->
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/coin2.svg" alt="density" height=400 width=640 style="margin-top:80px;">
+				<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>
+			</div>
+		</div>
+	</section>
+	
+	<section data-auto-animate>
+		<img src="images/coin_diff.svg" alt="coin" height="500" width="800">
+	</section> 
+	
+	<section data-auto-animate>
+		<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-bottom:50px;'> <span style="border-bottom: 1px solid;"> Why does the SO algorithm work? </span> </p>
+		<p data-id='coin' style='font-size:24px;text-align:left;margin-bottom:50px;'> Positive (Negative) bias in $\bar{x} \to \bar{x}$ should be higher (lower) than the SO estimate </p>
+		<img class='fragment' src="images/ov_surprise_dark.png" alt="coin" height="400" width="600">
+	</section>
+	
+	</section>	
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='ov3' style='font-size:24px;margin-bottom:100px;text-align:left;margin-left:0px;'> <span style="color:lime"><b>SO estimator</b> </p>
+		<p style='font-size:24px;text-align:left;margin-bottom:100px;margin-left:100px;'> Higher improvement in accuracy when... </p>
+		<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-left:100px;'> 1. $N$ is not very small. <span style='font-size:40px;'> &#10003; </span> </p>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;'> 2. High disagreement among experts (difficult questions). </p>
+	
+	</section>
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:20px;'> <span style="border-bottom: 1px solid;"> 2. High disagreement among experts (difficult questions). </span> </p>
+		<img src="images/dispersion2.png" height=370 width=740>
+		<p style='font-size:18px;text-align:center;margin-top:-20px;margin-bottom:30px;'> Dashed lines: 30% and 50% quantiles. </p>
+		<p class='fragment' data-fragment-index="1" style='font-size:22px;text-align:left;margin-left:80px;color:orange'> <b>SO estimator picks a quantile other than average prediction </b> </p>
+		<p class='fragment' data-fragment-index="2" style='font-size:22px;text-align:left;margin-left:80px;'> <b>More disagreement $\to$ Larger difference btw. quantiles $\to$ SO more effective</b></p>
+	</section>
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:80px;'> <span style="border-bottom: 1px solid;"> 2. High disagreement among experts (difficult questions). </span> </p>
+		<p data-id='coin2' style='font-size:24px;text-align:center;margin-bottom:80px;'> Evidence using data from Wilkening et al. (2021) </p>
+		<div class="container">
+			<div class="col" style='font-size:24px;padding-right:50px;text-align:center;'>
+				<p> "General Knowledge" </p> 
+				<p class = 'fragment' data-fragment-index="1" > "Herbivores eat both plants and animals" (True or False?) </p>
+			</div>
+			<div class="col" style='font-size:24px;padding-left:50px;text-align:center;'>
+				<p> "State Capital" </p> 
+				<p class = 'fragment' data-fragment-index="2" > "Los Angeles is the capital city of California" (True or False?) </p>
+			</div>
+		</div>
+		<br>
+		<ol>
+			<li class = 'fragment' data-fragment-index="3" style='font-size:24px;'> What is the probability that the statement is true? </li>
+			<li class = 'fragment' data-fragment-index="4" style='font-size:24px;'> What is the average probability estimated by the others? </li>
+		</ol>
+		<br><br>
+		<div class="container">
+			<div class="col" style='font-size:24px;padding-right:30px;text-align:center;'>
+				<p class = 'fragment' data-fragment-index="5" > 500 questions, 459 subjects </p> 
+			</div>
+			<div class="col" style='font-size:24px;padding-left:30px;text-align:center;'>
+				<p class = 'fragment' data-fragment-index="5" > 50 questions, 89 subjects </p>
+			</div>
+		</div>	
+	</section>
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;margin-bottom:70px;'> <span style="border-bottom: 1px solid;"> 2. High disagreement among experts (difficult questions). </span> </p>	
+		<p style='font-size:22px;text-align:left;margin-bottom:50px;margin-left:100px;'> <span style='color:orange;'><b>Analysis:</b></span> </p> 
+		<p style='font-size:22px;text-align:left;margin-left:130px;margin-bottom:50px;'> Categorize questions according to std dev in predictions (= disagreement). </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:22px;text-align:left;margin-left:130px;margin-bottom:50px;'> Generate 1000 Bootstrap samples of questions in each category </p> 
+		<p class = 'fragment' data-fragment-index="2" style='font-size:22px;text-align:left;margin-left:130px;'> In each Bootstrap sample... </p>
+		<p class = 'fragment' data-fragment-index="2" style='font-size:22px;text-align:left;margin-left:170px;'> Implement aggregation methods </p>
+		<!--<p class = 'fragment' data-fragment-index="2" style='font-size:22px;text-align:left;margin-left:170px;margin-bottom:50px;'> Calculate pairwise difference in overall Brier score (SO vs benchmark) </p>-->
+		<p class = 'fragment' data-fragment-index="2" style='font-size:22px;text-align:left;margin-left:170px;margin-bottom:50px;'> Calculate overall Brier score for each method </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:22px;text-align:left;margin-left:130px;'> Construct 95% Bootstrap confidence intervals for pairwise comparison </p>
+	</section>
+
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;'> <span style="border-bottom: 1px solid;"> 2. High disagreement among experts (difficult questions). </span> </p>
+		<img data-id='binary_diff' style='margin-top:-7px;' src="images/binary_diff1.svg" alt="density" height=550 width=750>
+		<p style='font-size:20px;margin-top:-25px;text-align:left;margin-left:100px;'> <span style='color:orange;'>Box plots:</span> 95% confidence intervals (SO score vs benchmark score) </p>	
+		<p style='font-size:22px;text-align:center;color:#111'> <b> More accurate than alternatives in high-disagreement questions. </b> </p> 
+	</section>-->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;'> <span style="border-bottom: 1px solid;"> 2. High disagreement among experts (difficult questions). </span> </p>
+		<img data-id='binary_diff' style='margin-top:-7px;' src="images/binary_diff2.svg" alt="density" height=550 width=750>
+		<p style='font-size:20px;margin-top:-25px;text-align:left;margin-left:100px;'> <span style='color:orange;'>Box plots:</span> 95% confidence intervals (SO score vs benchmark score) </p>
+		<p style='font-size:22px;text-align:center;color:lime'> <b> More accurate than alternatives in high-disagreement questions. </b> </p> 
+	</section> -->
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:0px;margin-top:100px;'> <span style="border-bottom: 1px solid;"> 2. High disagreement among experts (difficult questions). </span> </p>
+				<p style='font-size:20px;margin-top:-25px;text-align:left;margin-left:0px;margin-top:100px;'> <span style='color:orange;'>Box plots:</span> 95% confidence intervals (SO score - benchmark score) </p>
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/binary_diff1.svg" alt="density" height=550 width=750 style="margin-top:80px;">
+				<!--<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>-->
+			</div>
+		</div>
+	</section>
+	
+	<!-- Slide -->
+	<section data-auto-animate>
+		<div class="container">
+			<div class="col">
+				<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:0px;margin-top:100px;'> <span style="border-bottom: 1px solid;"> 2. High disagreement among experts (difficult questions). </span> </p>
+				<p style='font-size:20px;margin-top:-25px;text-align:left;margin-left:0px;margin-top:100px;'> <span style='color:orange;'>Box plots:</span> 95% confidence intervals (SO score - benchmark score) </p>
+				<p style='font-size:22px;text-align:left;margin-top:100px;color:lime;'> <b> More accurate than alternatives in high-disagreement questions. </b> </p> 
+			</div>
+			<div class="col-graph">
+				<img data-id='coin_rmse' src="images/binary_diff2.svg" alt="density" height=550 width=750 style="margin-top:80px;">
+				<!--<p style='font-size:18px;text-align:left;'> Minimal Pivoting (Palley and Soll, 2019), Knowledge Weighting (Palley and Satopaa, 2020), Meta-Probability Weighting (Martinie et al., 2020) </p>-->
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Slide -->
+	<section data-auto-animate>
+		<p data-id='ov3' style='font-size:24px;margin-bottom:100px;text-align:left;margin-left:0px;'> <span style="color:lime"><b>SO estimator</b> </span> </p>
+		<p style='font-size:24px;text-align:left;margin-bottom:80px;margin-left:100px;'> Higher improvement in accuracy when... </p>
+		<p data-id='sampl_size' style='font-size:24px;text-align:left;margin-left:100px;'> 1. $N$ is not very small. <span style='font-size:40px;'> &#10003; </span> </p>
+		<p data-id='disagree' style='font-size:24px;text-align:left;margin-left:100px;'> 2. High disagreement among experts (difficult questions). <span style='font-size:40px;'> &#10003; </span> </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;text-align:left;margin-left:100px;margin-top:60px;color:orange;'> <span style='font-size:40px;'> &#9733; </span style="vertical-align:middle;"> <b> Effective in moderate to large samples & difficult questions. </b> </p>
+	
+	</section>
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;margin-bottom:100px;'> <u> Application: Wisdom of polarized crowds </u> </p>
+		<p style='font-size:24px;text-align:left;margin-bottom:70px;'> Will Turkish GDP per capita be higher by the end of 2022? </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;text-align:left;margin-bottom:30px;'> Pro vs anti government voters $\to$ different priors $\to$ different average predictions </p>
+		<p class = 'fragment' data-fragment-index="2" style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:lime;'>SO estimate</span> in pro and anti groups $\to$ <span style='color:orange;'>depolarized aggregates </span> </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;text-align:left;margin-bottom:0px;'> Useful because... </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;text-align:left;margin-left:50px;'> 1. Depolarized WoC is more reliable </p>
+		<p class = 'fragment' data-fragment-index="4" style='font-size:24px;text-align:left;margin-left:50px;'> 2. |SO estimate - average| is a measure of the polarization </p>
+	</section> -->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p style='font-size:26px;text-align:left;margin-bottom:100px;'> <u> An application: Wisdom of polarized crowds </u> </p>
+		<p style='font-size:24px;text-align:left;margin-bottom:70px;'> Will GDP per capita be higher by the end of 2022? </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:24px;text-align:left;margin-bottom:30px;'> Pro vs anti government voters $\to$ different shared wisdom </p>
+		<p class = 'fragment' data-fragment-index="2" style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:lime;'>SO estimator</span> in pro and anti groups $\to$ <span style='color:orange;'>less polarized than group average</span> </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;text-align:left;margin-bottom:0px;'> Useful because... </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:24px;text-align:left;margin-left:50px;'> 1. Depolarized WoC is more reliable </p>
+		<p class = 'fragment' data-fragment-index="4" style='font-size:24px;text-align:left;margin-left:50px;'> 2. |SO estimate - group average| is a measure of the polarization </p>
+	</section> -->
+	
+	<!-- Slide 
+	<section>
+		<p> Other works </p>
+	</section>-->
+	
+	<!-- Slide
+	<section data-auto-animate>
+		<p data-id='ppm' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Peer prediction markets to elicit unverifiable information</span> <br><span style='font-size:20px;'>(joint with A. Baillon and S. van der Zee) </span></p>
+		<p data-id='selfextrem' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Incentives for self-extremized expert judgments to alleviate the shared-information problem</span> <br> <span style='font-size:20px;'> R&R at <em>Decision</em>'s Special Issue on the Wisdom of Crowds</span> </p>
+		<p data-id='recalibr' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Robust recalibration of aggregate probability forecasts using meta-beliefs </span><br> <span style='font-size:20px;'>(in progress, joint with T. Wilkening)</span></p>
+		<p data-id='ESG' style='font-size:24px;text-align:left;margin-bottom:0px;'> <span style='color:orange;font-size:24px;'>Truthful elicitation of investor preferences for high-ESG investments </span><br> <span style='font-size:20px;'>(in progress)</span></p>
+	</section>  -->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='ppm' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Peer prediction markets to elicit unverifiable information</span> <br><span style='font-size:20px;'>(joint with A. Baillon and S. van der Zee) </span></p>
+		<p style='font-size:22px;text-align:left;margin-bottom:60px;'> Example: Do people follow Covid-19 safety guidelines? </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:22px;text-align:left;margin-bottom:60px;'> Large-scale survey, <span class = 'fragment' data-fragment-index="2"> would people answer carefully and honestly?</span> </p>
+		<p class = 'fragment' data-fragment-index="3" style='font-size:22px;text-align:left;margin-bottom:60px;'> Incentive mechanism to elicit high-quality subjective data </p>
+	</section> -->
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='ppm' style='font-size:24px;text-align:left;margin-bottom:50px;'> <span style='color:orange;font-size:24px;'>Peer prediction markets to elicit unverifiable information</span> <br><span style='font-size:20px;'>(joint with A. Baillon and S. van der Zee) </span></p>
+		
+		<div class="container">
+		
+			<div class="col">
+				<p class = 'fragment' data-fragment-index="1" style='font-size:22px;text-align:left;margin-bottom:40px;'> PPM incentives: </p>
+				<p class = 'fragment' data-fragment-index="1" style='font-size:22px;text-align:left;margin-bottom:40px;'> 1. Calculate % True and False picks this week  </p>	
+				<p class = 'fragment' data-fragment-index="2" style='font-size:22px;text-align:left;margin-bottom:50px;'> 2. Bonus $>0$ if your pick is more popular than last week  </p>	
+			</div>
+			<div class="col-graph">
+				<img src="images/ppm.png" alt="coin" height="250" width="650">
+			</div>
+		</div>
+		<p class = 'fragment' data-fragment-index="4" style='font-size:22px;text-align:left;margin-bottom:0px;'> True-type expects more True-types $\to$ bets on "True" </p>
+		<p class = 'fragment' data-fragment-index="5" style='font-size:22px;text-align:left;margin-bottom:0px;color:lime;'> Evidence: % True is higher under PPM incentives </p>
+		<p class = 'fragment' data-fragment-index="6" style='font-size:22px;text-align:left;margin-bottom:0px;'> Manuscript for <em>American Economic Journal:Microeconomics</em> </p>
+	</section>  -->
+	
+	
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='ppm' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Peer prediction markets to elicit unverifiable information</span> <br><span style='font-size:20px;'>(joint with A. Baillon and S. van der Zee) </span></p>
+		<p data-id='selfextrem' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Incentives for self-extremized expert judgments to alleviate the shared-information problem</span> <br> <span style='font-size:20px;'> R&R at <em>Decision</em>'s Special Issue on the Wisdom of Crowds</span> </p>
+		<p data-id='recalibr' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Robust recalibration of aggregate probability forecasts using meta-beliefs </span><br> <span style='font-size:20px;'>(in progress, joint with T. Wilkening)</span></p>
+		<p data-id='ESG' style='font-size:24px;text-align:left;margin-bottom:0px;'> <span style='color:orange;font-size:24px;'>Truthful elicitation of investor preferences for high-ESG investments </span><br> <span style='font-size:20px;'>(in progress)</span></p>
+	</section>  -->
+	
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='selfextrem' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Incentives for self-extremized expert judgments to alleviate the shared-information problem</span> <br> <span style='font-size:20px;'> R&R at <em>Decision</em>'s Special Issue on the Wisdom of Crowds</span> </p>
+		<p style='font-size:22px;text-align:left;margin-bottom:50px;'> Incentive-based solution to the shared-information problem </p>
+		<p class = 'fragment' data-fragment-index="1" data-id='selfextrem' style='font-size:22px;text-align:left;margin-bottom:50px;'> Reward forecasters for the accuracy of crowd average</p>
+		<p class = 'fragment' data-fragment-index="2" data-id='selfextrem' style='font-size:22px;text-align:left;margin-bottom:30px;'> Experimental evidence:</p>
+		<p class = 'fragment' data-fragment-index="2" data-id='selfextrem' style='font-size:22px;text-align:left;margin-bottom:10px;margin-left:30px;'> Forecasters anticipate the shared-information problem </p>
+		<p class = 'fragment' data-fragment-index="2" data-id='selfextrem' style='font-size:22px;text-align:left;margin-bottom:0px;margin-left:30px;'> Extremize towards private information </p>
+			 
+	</section> -->
+	  
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='ppm' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Peer prediction markets to elicit unverifiable information</span> <br><span style='font-size:20px;'>(joint with A. Baillon and S. van der Zee) </span></p>
+		<p data-id='selfextrem' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Incentives for self-extremized expert judgments to alleviate the shared-information problem</span> <br> <span style='font-size:20px;'> R&R at <em>Decision</em>'s Special Issue on the Wisdom of Crowds</span> </p>
+		<p data-id='recalibr' style='font-size:24px;text-align:left;margin-bottom:70px;'> <span style='color:orange;font-size:24px;'>Robust recalibration of aggregate probability forecasts using meta-beliefs </span><br> <span style='font-size:20px;'>(in progress, joint with T. Wilkening)</span></p>
+		<p data-id='ESG' style='font-size:24px;text-align:left;margin-bottom:0px;'> <span style='color:orange;font-size:24px;'>Truthful elicitation of investor preferences for high-ESG investments </span><br> <span style='font-size:20px;'>(in progress)</span></p>
+	</section> --> 
+	
+	<!-- Slide 
+	<section data-auto-animate>
+		<p data-id='recalibr' style='font-size:24px;text-align:left;margin-bottom:30px;'> <span style='color:orange;font-size:24px;'>Robust recalibration of aggregate probability forecasts using meta-beliefs </span><br> <span style='font-size:20px;'>(in progress, joint with T. Wilkening from U of Melbourne)</span></p>
+		<p style='font-size:22px;text-align:left;margin-bottom:0px;'> Average probabilistic forecast is usually miscalibrated </p>
+		<p style='font-size:22px;text-align:left;margin-bottom:130px;'> A recalibration method using meta-predictions </p>
+		<p data-id='ESG' style='font-size:24px;text-align:left;margin-bottom:30px;'> <span style='color:orange;font-size:24px;'>Truthful elicitation of investor preferences for high-ESG investments </span><br> <span style='font-size:20px;'>(in progress)</span></p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:22px;text-align:left;margin-bottom:0px;'> Do investors really prefer environmentally sustainable investments? </p>
+		<p class = 'fragment' data-fragment-index="1" style='font-size:22px;text-align:left;margin-bottom:0px;'> Survey with real investors </p>
+	</section> -->
+
+	<!-- Slide -->
+	<section data-transition="fade">
+		<p> Questions? </p>
+		<img src="images/rick6.gif" alt="density" height=360 width=540>
+	</section>
+
+</div>
+</div>
+
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/math/math.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+Reveal.initialize({
+	
+	width: 1000,
+	//disableLayout: true,
+  	
+	math: {
+		mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+		config: 'TeX-AMS_HTML-full',
+		// pass other options into `MathJax.Hub.Config()`
+		TeX: { Macros: { RR: "{\\bf R}" } }
+	},
+
+	hash: true,
+	slideNumber: true,
+	
+	// Learn about plugins: https://revealjs.com/plugins/
+	plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+});
+
+</script>
+</body>
+
+</html>
